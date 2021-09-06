@@ -1,29 +1,33 @@
 <?php
-// Ciao ragazzi, esercizio di oggi: nome repo: php-oop-2
-// Oggi pomeriggio provate ad immaginare quali sono le classi necessarie per creare uno shop online; ad esempio, ci saranno sicuramente dei prodotti da acquistare e degli utenti che fanno shopping. 
-// Strutturare le classi gestendo l'ereditarietà dove necessario; ad esempio ci potrebbero essere degli utenti premium che hanno diritto a degli sconti esclusivi, oppure diverse tipologie di prodotti.
-// Provate a far interagire tra di loro gli oggetti: ad esempio, l'utente dello shop inserisce una carta di credito... $c = new CreditCard(..); $user->insertCreditCard($c);
-// BONUS: Gestite eventuali eccezioni che si possono verificare (es: carta di credito scaduta).
+    require_once 'Companycustomer.php';
 
+    $utenteGenerico = new User('genUs3r', '3ht5ufih34t');
 
+    $cliente = new Customer('genCust0m', '3875tbvg34r', 'Mario', 'Rossi', 'Via Arciboldi, 9', 'Via Arciboldi, 9', '5645623854');
 
-// CLASSI:
-// CHI EFFETTUA ACCESSO SUL SITO? 
-// -> CLIENTI
-// -> AMMINISTRATORI
+    $aziendaCliente = new Companycustomer('genC0mpany', 'behtruy4b', 'Luca', 'Bianchi', 'Via Rimembranze, 7', 'Via Ostrogoti, 17', '5464584942', 'Via Ostrogoti, 17');
+    $aziendaCliente->setPhone(5648213542);
 
-// --> GESTIRE LE UTENZE
+?>
 
-// COSA SI PUò TROVARE SUL SITO?
-// prodotti --> PRODOTTI IN OFFERTA
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
 
-// I CLIENTI POTREBBERO AVERE UNO SCONTO DEL 5% MENTRE GLLI UTENTI CHE ACQUISTANO SENZA REGISTRAZIONE NO
+    <h2><?php echo $utenteGenerico->getAnagraphUser();?></h2>
+    <p></p>
 
-// CREARE DB:
+    <h2><?php echo $cliente->getAnagraphCustomer();?></h2>
+    <p></p>
 
-// UTENTI REGISTRATI
-
-
-
-// prodotti
-// utenti
+    <h2><?php echo $aziendaCliente->getAnagraphCompany();?></h2>
+    <p></p>
+    
+</body>
+</html>
